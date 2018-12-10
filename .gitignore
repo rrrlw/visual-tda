@@ -1,0 +1,8 @@
+# data files (not code)
+*.png
+*.pdf
+
+# Rstudio project files
+*.Rproj
+.Rhistory
+.Rproj.user
