@@ -1,5 +1,6 @@
 # load library and dataset
 library("ggplot2")
+library("ggforce")
 library("TDAstats")
 
 #####FIGURE 1#####
@@ -24,6 +25,24 @@ ggplot(data = circ.df, aes(x = x, y = y)) +
   coord_fixed() +
   ggtitle("(a) Sample dataset")
 ggsave("example-plot.png", width = 4.5, height = 3.5)
+
+# plot example of Vietoris-Rips complex
+plot.diam <- 0.2
+ggplot(data = circ.df) +
+  geom_circle(aes(x0 = x, y0 = y, r = I(plot.diam / 2)),
+              colour = NA, fill = "blue", alpha = 0.2) +
+  geom_point(aes(x = x, y = y),
+             colour = "white", size = I(1)) +
+  coord_fixed() +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12),
+        axis.title = element_text(size = 14),
+        plot.title = element_text(size = 15)) +
+  xlab("X Cartesian coordinate") +
+  ylab("Y Cartesian coordinate") +
+  ggtitle(paste("(b) VR complex for d =",
+                plot.diam))
+ggsave("example-VR.png", width = 4.5, height = 3.5)
 
 # plot conventional persistence diagram for circle2d
 plot_persist(phom.circ) +
