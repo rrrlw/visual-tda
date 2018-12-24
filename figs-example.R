@@ -23,6 +23,20 @@ plot_persist(phom.circ) +
         plot.title = element_text(size = 15))
 ggsave("example-persist.png", width = 4.5, height = 3.5)
 
+plot_persist(phom.circ, flat = TRUE) +
+  geom_point(data = temp.phom, aes(x = birth,
+                                   y = pers,
+                                   colour = dimension,
+                                   shape = dimension),
+             size = I(2.5)) +
+  xlab("Feature appearance") +
+  ylab("Feature persistence") +
+  ggtitle("Flat persistence diagram") +
+  theme(axis.text = element_text(size = 12),
+        axis.title = element_text(size = 14),
+        plot.title = element_text(size = 15))
+ggsave("example-flat.png", width = 4.5, height = 3.5)
+
 plot_barcode(phom.circ) +
   ggtitle("Persistence barcode") +
   theme(axis.text = element_text(size = 12),
