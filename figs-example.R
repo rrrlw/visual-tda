@@ -1,11 +1,21 @@
+#####SETUP#####
 # load library and dataset
 library("ggplot2")
 library("ggforce")
 library("TDAstats")
 
+# reproducibility
+set.seed(1)
+
 #####FIGURE 1#####
-# calculate persistent homology and visualize/save
+# load data and convert circle into annulus by adding noise
 data("circle2d")
+circle2d[, 1] <- circle2d[, 1] + rnorm(nrow(circle2d),
+                                       mean = 0, sd = 0.075)
+circle2d[, 2] <- circle2d[, 2] + rnorm(nrow(circle2d),
+                                       mean = 0, sd = 0.075)
+
+# setup data for visualization
 phom.circ <- calculate_homology(circle2d)
 temp.phom <- as.data.frame(phom.circ)
 temp.phom$pers <- temp.phom$death - temp.phom$birth
