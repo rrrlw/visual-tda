@@ -11,9 +11,9 @@ set.seed(1)
 # load data and convert circle into annulus by adding noise
 data("circle2d")
 circle2d[, 1] <- circle2d[, 1] + rnorm(nrow(circle2d),
-                                       mean = 0, sd = 0.075)
+                                       mean = 0, sd = 0.1)
 circle2d[, 2] <- circle2d[, 2] + rnorm(nrow(circle2d),
-                                       mean = 0, sd = 0.075)
+                                       mean = 0, sd = 0.1)
 
 # setup data for visualization
 phom.circ <- calculate_homology(circle2d)
