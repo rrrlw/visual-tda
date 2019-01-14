@@ -63,7 +63,7 @@ plot_persist(phom.circ) +
              size = I(2.5)) +
   xlab("Feature appearance") +
   ylab("Feature disappearance") +
-  ggtitle("(c) Conventional persistence diagram") +
+  ggtitle("(c) Diagonal persistence diagram") +
   theme(axis.text = element_text(size = 12),
         axis.title = element_text(size = 14),
         plot.title = element_text(size = 15))
@@ -111,7 +111,7 @@ plot_persist(phom.bias) +
              size = I(2.5)) +
   xlab("Feature appearance") +
   ylab("Feature disappearance") +
-  ggtitle("(a) Conventional persistence diagram") +
+  ggtitle("(a) Diagonalpersistence diagram") +
   theme(axis.text = element_text(size = 12),
         axis.title = element_text(size = 14),
         plot.title = element_text(size = 15))
@@ -154,7 +154,7 @@ plot_persist(phom.sphere) +
              size = I(2.5)) +
   xlab("Feature appearance") +
   ylab("Feature disappearance") +
-  ggtitle("(b) Conventional persistence diagram") +
+  ggtitle("(b) Diagonal persistence diagram") +
   theme(axis.text = element_text(size = 12),
         axis.title = element_text(size = 14),
         plot.title = element_text(size = 15))
