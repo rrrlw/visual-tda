@@ -52,7 +52,8 @@ ggplot(data = circ.df) +
   ylab("Y Cartesian coordinate") +
   ggtitle(paste("(b) VR complex for d =",
                 plot.diam))
-ggsave("Fig1b.eps", width = 4.5, height = 3.5)
+ggsave("Fig1b.eps", device = cairo_ps,
+       width = 4.5, height = 3.5)
 
 # plot conventional persistence diagram for circle2d
 plot_persist(phom.circ) +
