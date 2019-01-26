@@ -34,7 +34,7 @@ ggplot(data = circ.df, aes(x = x, y = y)) +
   ylab("Y Cartesian coordinate") +
   coord_fixed() +
   ggtitle("(a) Sample dataset")
-ggsave("example-plot.tiff", width = 4.5, height = 3.5)
+ggsave("Fig1a.tiff", width = 4.5, height = 3.5)
 
 # plot example of Vietoris-Rips complex
 plot.diam <- 0.2
@@ -52,7 +52,7 @@ ggplot(data = circ.df) +
   ylab("Y Cartesian coordinate") +
   ggtitle(paste("(b) VR complex for d =",
                 plot.diam))
-ggsave("example-VR.tiff", width = 4.5, height = 3.5)
+ggsave("Fig1b.tiff", width = 4.5, height = 3.5)
 
 # plot conventional persistence diagram for circle2d
 plot_persist(phom.circ) +
@@ -67,7 +67,7 @@ plot_persist(phom.circ) +
   theme(axis.text = element_text(size = 12),
         axis.title = element_text(size = 14),
         plot.title = element_text(size = 15))
-ggsave("example-persist.tiff", width = 4.5, height = 3.5)
+ggsave("Fig1c.tiff", width = 4.5, height = 3.5)
 
 # plot flat persistence diagram for circle2d (unused currently)
 plot_persist(phom.circ, flat = TRUE) +
@@ -96,9 +96,9 @@ plot_barcode(phom.circ) +
   theme(axis.text = element_text(size = 12),
         axis.title = element_text(size = 14),
         plot.title = element_text(size = 15))
-ggsave("example-barcode.tiff", width = 4.5, height = 3.5)
+ggsave("Fig1d.tiff", width = 4.5, height = 3.5)
 
-#####FIGURE 2#####
+#####OMITTED FIGURE#####
 # make bias example for persistence diagrams
 phom.bias <- matrix(c(0, 0.5, 1.0,
                       0, 0.75, 1.1),
@@ -137,7 +137,7 @@ plot_persist(phom.bias, flat = TRUE) +
         plot.title = element_text(size = 15))
 ggsave("example-bias2.tiff", width = 4.5, height = 3.5)
 
-#####FIGURE 3#####
+#####FIGURE 2#####
 # make sphere example to highlight benefits
 data("sphere3d")
 phom.sphere <- calculate_homology(sphere3d, dim = 2)
@@ -166,7 +166,7 @@ plot_barcode(phom.sphere) +
   theme(axis.text = element_text(size = 12),
         axis.title = element_text(size = 14),
         plot.title = element_text(size = 15))
-ggsave("sphere-barcode.tiff", width = 4.5, height = 3.5)
+ggsave("Fig2a.tiff", width = 4.5, height = 3.5)
 
 plot_persist(phom.sphere) +
   geom_point(data = temp.phom, aes(x = birth,
@@ -180,7 +180,7 @@ plot_persist(phom.sphere) +
   theme(axis.text = element_text(size = 12),
         axis.title = element_text(size = 14),
         plot.title = element_text(size = 15))
-ggsave("sphere-persist.tiff", width = 4.5, height = 3.5)
+ggsave("Fig2b.tiff", width = 4.5, height = 3.5)
 
 plot_persist(phom.sphere, flat = TRUE) +
   geom_point(data = temp.phom, aes(x = birth,
@@ -193,4 +193,4 @@ plot_persist(phom.sphere, flat = TRUE) +
   theme(axis.text = element_text(size = 12),
         axis.title = element_text(size = 14),
         plot.title = element_text(size = 15))
-ggsave("sphere-flat.tiff", width = 4.5, height = 3.5)
+ggsave("Fig2c.tiff", width = 4.5, height = 3.5)
