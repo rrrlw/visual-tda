@@ -86,11 +86,11 @@ ggsave("example-flat.tiff", width = 4.5, height = 3.5)
 
 # plot persistence barcode for circle2d; add black separators for JACT
 phom.circ <- rbind(phom.circ[phom.circ[, "dimension"] == 0, ],
-                   c(0, 0, 0), c(0, 0, 0),
+                   c(0, 0, 0), c(0, 0, 0), c(0, 0, 0),
                    phom.circ[phom.circ[, "dimension"] == 1, ])
 num_0cycles <- sum(phom.circ[, "dimension"] == 0)
 plot_barcode(phom.circ) +
-  geom_abline(slope = 0, intercept = num_0cycles - 0.5,
+  geom_abline(slope = 0, intercept = num_0cycles - 1,
               size = 0.25) +
   ggtitle("(d) Persistence barcode") +
   theme(axis.text = element_text(size = 12),
@@ -147,9 +147,9 @@ temp.phom$dimension <- as.factor(temp.phom$dimension)
 
 # add separators for JACT submission
 phom.sphere <- rbind(phom.sphere[phom.sphere[, "dimension"] == 0, ],
-                     c(0, 0, 0), c(0, 0, 0),
+                     c(0, 0, 0), c(0, 0, 0), c(0, 0, 0),
                      phom.sphere[phom.sphere[, "dimension"] == 1, ],
-                     c(1, 0, 0), c(1, 0, 0),
+                     c(1, 0, 0), c(1, 0, 0), c(1, 0, 0),
                      phom.sphere[phom.sphere[, "dimension"] == 2, ])
 num_0cycles <- sum(phom.sphere[, "dimension"] == 0)
 num_1cycles <- sum(phom.sphere[, "dimension"] == 1)
@@ -158,10 +158,10 @@ num_1cycles <- sum(phom.sphere[, "dimension"] == 1)
 plot_barcode(phom.sphere) +
   ggtitle("(a) Persistence barcode") +
   geom_abline(slope = 0,
-              intercept = num_0cycles - 0.5,
+              intercept = num_0cycles - 1,
               size = 0.25) +
   geom_abline(slope = 0,
-              intercept = num_0cycles + num_1cycles - 0.5,
+              intercept = num_0cycles + num_1cycles - 1,
               size = 0.25) +
   theme(axis.text = element_text(size = 12),
         axis.title = element_text(size = 14),
