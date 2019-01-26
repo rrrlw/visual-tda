@@ -1,6 +1,8 @@
 # data files (not code)
 *.png
 *.pdf
+*.eps
+*.tiff
 
 # Rstudio project files
 *.Rproj
