@@ -6,7 +6,7 @@ Make up for deficiencies in conventional persistence diagrams to more effectivel
 
 ## Reproduce figures
 
-The figures from the [arXiv preprint]() can be automatically and exactly reproduced by running the following on Terminal:
+The figures from the [arXiv preprint](https://arxiv.org/abs/1812.04567) can be automatically and exactly reproduced by running the following on Terminal:
 
 ```r
 git clone https://github.com/rrrlw/visual-tda
