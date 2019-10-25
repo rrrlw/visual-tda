@@ -1,5 +1,7 @@
 # Flat persistence diagrams to visualize persistent homology
 
+Raoul R. Wadhwa, Andrew Dhawan, Drew F. K. Williamson, Jacob G. Scott
+
 ## Purpose
 
 Make up for deficiencies in conventional persistence diagrams to more effectively visualize persistent homology as part of topological data analysis.
